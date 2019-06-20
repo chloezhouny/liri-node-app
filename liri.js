@@ -52,7 +52,7 @@ if (website === "concert-this")
 
  	if (searchName === undefined)
  	{
- 		searchName = "Ace of Base The Sign"
+ 		searchName = "Ace of Base The Sign";
  	}
  
 	 	spotify.search({ type: 'track', query: searchName }, function(err, data) {
@@ -64,8 +64,50 @@ if (website === "concert-this")
 		console.log("Song name: ", data.tracks.items[0].name); 
 		console.log("Preview link: ", data.tracks.items[0].album.external_urls.spotify); 
 		console.log("Album: ", data.tracks.items[0].album.name);
-		
-
 
 	});
+ }
+
+
+ if (website === "movie-this")
+ {
+ 	if (searchName === undefined)
+ 	{
+ 		searchName = "Mr. Nobody";
+ 	}
+
+
+ 	axios.get("http://www.omdbapi.com/?t=" + searchName + "&y=&plot=short&apikey=trilogy").then(
+  	function(response) {
+    console.log("Title: ", response.data.Title);
+    console.log("Year: ", response.data.Year);
+    console.log("imbd Rating: ", response.data.imdbRating);
+    console.log("Rotten Tomatoes Rating: ", response.data.Ratings[1].Value);
+    console.log("Country produced: ", response.data.Country);
+    console.log("Language: ", response.data.Language);
+    console.log("Plot: ", response.data.Plot);
+     console.log("Actors: ", response.data.Actors);
+
+  })
+  .catch(function(error) {
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx
+      console.log("---------------Data---------------");
+      console.log(error.response.data);
+      console.log("---------------Status---------------");
+      console.log(error.response.status);
+      console.log("---------------Status---------------");
+      console.log(error.response.headers);
+    } else if (error.request) {
+      // The request was made but no response was received
+      // `error.request` is an object that comes back with details pertaining to the error that occurred.
+      console.log(error.request);
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.log("Error", error.message);
+    }
+    console.log(error.config);
+  });
+
  }
