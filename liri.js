@@ -168,9 +168,10 @@ var searchName = process.argv.slice(3).join(" ");
 	 }
 
 
+     console.log("                   ");
+	 console.log("                   ");
 	 console.log("    Hi, I'm Blossom");
-	 console.log(chalk.red(`                                       
-                                                          
+	 console.log(chalk.red(`                                                                                                
       /\\        _/\\                                       
      |  \\      /   |                                      
      |   | __ /   |                                       
@@ -200,6 +201,8 @@ console.log(
   chalk.white(`       |__|___|`));
 console.log(                                          
   chalk.white(`       |_|| _||   Amw                                    
-       \`--'\`--'`));               
+       \`--'\`--'`));  
+console.log(`            `); 
+console.log(`            `);            
 
 
