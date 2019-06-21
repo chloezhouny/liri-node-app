@@ -180,10 +180,10 @@ var searchName = process.argv.slice(3).join(" ");
 ,chalk.yellow(`
     // .-~ /\\    \\\\ ~-.                                      
    / ~~~  ~~~~~ ~~~ \\`),
-chalk.magenta(`
-  | *  |     | *  | ||                                    
-  |--'/       \\ -'.' |`),
-chalk.yellow(`
+chalk.white(`
+  |`),chalk.magenta(` *  |     | *  |`),chalk.white(`||                                    
+  |`),chalk.magenta(`--'/       \\ -'.'`),chalk.white(`|`),
+chalk.white(`
    \\~    |_|   ~~~~~/                                     
 .--_~-.._      __.-~                                      
 \`-._~~~  ~~~~~~  |\\`),
