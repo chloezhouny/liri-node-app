@@ -5,6 +5,8 @@ var keys = require("./keys.js");
 
 var Spotify = require('node-spotify-api');
 
+const chalk = require('chalk');
+
 var fs = require("fs");
 
 // to access your keys information
@@ -19,14 +21,14 @@ var searchName = process.argv.slice(3).join(" ");
 	
 	function check()
 	{
-		 var divider = "\n------------------------------------------------------------\n\n";
+		 var divider = "\nnunununununununununununununununununununununununununununununun\n\n";
 
 		
 		if (website === "concert-this")
 		{
 			axios.get("https://rest.bandsintown.com/artists/" + searchName + "/events?app_id=codingbootcamp").then(
 			  function(response) {
-			  	
+
 
 			  	 var showData = [
 			    "Name of the venue: " + response.data[0].venue.name,
@@ -164,3 +166,40 @@ var searchName = process.argv.slice(3).join(" ");
 	 {
 	 	check();
 	 }
+
+
+	 console.log("    Hi, I'm Blossom");
+	 console.log(chalk.red(`                                       
+                                                          
+      /\\        _/\\                                       
+     |  \\      /   |                                      
+     |   | __ /   |                                       
+     |    |  |   |                                        
+      |..------..|`)
+
+,chalk.yellow(`
+    // .-~ /\\    \\\\ ~-.                                      
+   / ~~~  ~~~~~ ~~~ \\`),
+chalk.magenta(`
+  | *  |     | *  | ||                                    
+  |--'/       \\ -'.' |`),
+chalk.yellow(`
+   \\~    |_|   ~~~~~/                                     
+.--_~-.._      __.-~                                      
+\`-._~~~  ~~~~~~  |\\`),
+chalk.yellow(`                                     
+  ~~~~`), chalk.magenta(`|______|`),chalk.yellow(` | |                                      
+    / `), chalk.magenta(`|______|`),chalk.yellow(` |  \\`));
+console.log(
+  chalk.yellow(` \\-~ /`), chalk.magenta(`|      |`), chalk.yellow(` |\\  ~-/`));
+console.log(                                  
+  chalk.yellow(`  ~-._`), chalk.magenta(`|______\`\`-`), chalk.yellow(` '_.--~ `)); 
+console.log(                                  
+  chalk.white(`       |  |   |`), chalk.yellow(`~~`));
+console.log(                                        
+  chalk.white(`       |__|___|`));
+console.log(                                          
+  chalk.white(`       |_|| _||   Amw                                    
+       \`--'\`--'`));               
+
+
