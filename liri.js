@@ -19,17 +19,26 @@ var searchName = process.argv.slice(3).join(" ");
 	
 	function check()
 	{
+		 var divider = "\n------------------------------------------------------------\n\n";
 
-		console.log("in check")
+		
 		if (website === "concert-this")
 		{
 			axios.get("https://rest.bandsintown.com/artists/" + searchName + "/events?app_id=codingbootcamp").then(
 			  function(response) {
-			    console.log("Data", response.data);
-			    console.log("Name of the venue:", response.data[0].venue.name);
-			    console.log("Venue Location: ", response.data[0].venue.city, " ", response.data[0].venue.region, " ",response.data[0].venue.country);
-			    console.log("Date of event: ", response.data[0].datetime);
+			  	
 
+			  	 var showData = [
+			    "Name of the venue: " + response.data[0].venue.name,
+			    "Venue Location: "  + response.data[0].venue.city + " " + response.data[0].venue.region +  " " + response.data[0].venue.country,
+			    "Date of event: " +  response.data[0].datetime
+                ].join("\n\n");
+
+	                 fs.appendFile("log.txt", showData + divider, function(err) {
+	        		if (err) throw err;
+	        		 console.log(showData);	       
+	     			 });
+	     			 
 			  })
 			  .catch(function(error) {
 			    if (error.response) {
@@ -65,14 +74,21 @@ var searchName = process.argv.slice(3).join(" ");
 
 		 	axios.get("http://www.omdbapi.com/?t=" + searchName + "&y=&plot=short&apikey=trilogy").then(
 			  	function(response) {
-			    console.log("Title: ", response.data.Title);
-			    console.log("Year: ", response.data.Year);
-			    console.log("imbd Rating: ", response.data.imdbRating);
-			    console.log("Rotten Tomatoes Rating: ", response.data.Ratings[1].Value);
-			    console.log("Country produced: ", response.data.Country);
-			    console.log("Language: ", response.data.Language);
-			    console.log("Plot: ", response.data.Plot);
-			     console.log("Actors: ", response.data.Actors);
+			  		 var showData = [
+			    "Title: " + response.data.Title,
+			    "Year: " + response.data.Year,
+			    "imbd Rating: " + response.data.imdbRating,
+			    "Rotten Tomatoes Rating: " + response.data.Ratings[1].Value,
+			    "Country produced: " + response.data.Country,
+			    "Language: " + response.data.Language,
+			    "Plot: " + response.data.Plot,
+			     "Actors: " + response.data.Actors
+			     ].join("\n\n");
+
+			     fs.appendFile("log.txt", showData + divider, function(err) {
+	        		if (err) throw err;
+	        		 console.log(showData);	       
+	     			 });
 		  })
 		  .catch(function(error) {
 		    if (error.response) {
@@ -99,7 +115,7 @@ var searchName = process.argv.slice(3).join(" ");
 		
 		 if (website === "spotify-this-song")
 		 {
-		 	console.log("In spotify");
+		 	
 			if (!searchName)
 		 	{
 		 		searchName = "Ace of Base The Sign";
@@ -109,11 +125,15 @@ var searchName = process.argv.slice(3).join(" ");
 			  if (err) {
 			    return console.log('Error occurred: ' + err);
 			  }
-			 
-				console.log("Artist name: ", data.tracks.items[0].artists[0].name); 
-				console.log("Song name: ", data.tracks.items[0].name); 
-				console.log("Preview link: ", data.tracks.items[0].album.external_urls.spotify); 
-				console.log("Album: ", data.tracks.items[0].album.name);
+			 	 var showData = [
+				"Artist name: " + data.tracks.items[0].artists[0].name,
+				"Song name: " + data.tracks.items[0].name,
+				"Preview link: " + data.tracks.items[0].album.external_urls.spotify,
+				"Album: " + data.tracks.items[0].album.name].join("\n\n");
+				 fs.appendFile("log.txt", showData + divider, function(err) {
+	        		if (err) throw err;
+	        		 console.log(showData);	       
+	     			 });
 
 			});
 		 }
@@ -130,7 +150,6 @@ var searchName = process.argv.slice(3).join(" ");
 	        if (error) {
 	          return console.log(error);
 	        }
-
 	        var dataArr = [];       
 	        dataArr = data.split(",");
 	        console.log(dataArr);
