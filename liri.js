@@ -168,6 +168,7 @@ var searchName = process.argv.slice(3).join(" ");
 	 }
 
 
+
      console.log("                   ");
 	 console.log("                   ");
 	 console.log("    Hi, I'm Blossom");
@@ -177,32 +178,57 @@ var searchName = process.argv.slice(3).join(" ");
      |   | __ /   |                                       
      |    |  |   |                                        
       |..------..|`)
-
+ 
 ,chalk.yellow(`
-    // .-~ /\\    \\\\ ~-.                                      
+    .-~ /\\    \\\\ ~-.                                      
    / ~~~  ~~~~~ ~~~ \\`),
 chalk.white(`
-  |`),chalk.magenta(` *  |     | *  |`),chalk.white(`||                                    
-  |`),chalk.magenta(`--'/       \\ -'.'`),chalk.white(`|`),
+  |`),chalk.magenta(` *  |    | *  |`),chalk.white(`||                                    
+  |`),chalk.magenta(`--'/      \\ -'.'`),chalk.white(`|`),
 chalk.white(`
    \\~    |_|   ~~~~~/                                     
 .--_~-.._      __.-~                                      
-\`-._~~~  ~~~~~~  |\\`),
-chalk.yellow(`                                     
-  ~~~~`), chalk.magenta(`|______|`),chalk.white(` |`), chalk.yellow(`|                                      
-    / `), chalk.magenta(`|______|`),chalk.white(` |`), chalk.yellow(` \\`));
+\`-._~~~  ~~~~~~  |`)+chalk.yellow(`\\`),
+chalk.white(`                                     
+    ~~~~`)+ chalk.magenta(`|______|`)+chalk.white(` |`), chalk.yellow(`|                                      
+      / `)+ chalk.magenta(`|______|`)+chalk.white(` |`), chalk.yellow(` \\`));
 console.log(
-  chalk.yellow(` \\-~ /`), chalk.magenta(`|      |`), chalk.white(` |`), chalk.yellow(`\\  ~-/`));
+  chalk.yellow(`   \\-~ /`)+ chalk.magenta(`|      |`), chalk.white(`|`), chalk.yellow(`\\  ~-/`));
 console.log(                                  
-  chalk.yellow(`  ~-._`), chalk.magenta(`|______`), chalk.white(`\`-`), chalk.yellow(` '_.--~ `)); 
+  chalk.yellow(`    ~-._`)+ chalk.magenta(`|______\``)+ chalk.white(`-`)+ chalk.yellow(`'_.--~ `)); 
 console.log(                                  
-  chalk.white(`       |  |   |`), chalk.yellow(`~~`));
+  chalk.white(`        |  |   |`)+ chalk.yellow(`~~`));
 console.log(                                        
-  chalk.white(`       |__|___|`));
+  chalk.white(`        |__|___|`));
 console.log(                                          
-  chalk.white(`       |_|| _||   Amw                                    
-       \`--'\`--'`));  
+  chalk.white(`        |_|| _||   Amw                                    
+        \`--'\`--'`));  
 console.log(`            `); 
 console.log(`            `);            
+
+
+
+     console.log("                   ");
+	 console.log("                   ");
+	 console.log(chalk.yellow(`
+                     ..------..                          
+               /~~-.-~__-'\`-__  ~-.  .-~-.`));
+	 console.log(chalk.yellow(`             |   /~~~\\     / ~~---\\|     |`));   
+    console.log(chalk.yellow(`             |  `)+ chalk.white(`||`) + chalk.cyan(`| * |   `)+ chalk.white(`| `)+ chalk.cyan(`| |  * |`)+ chalk.yellow(`|`));               
+              // /_-|\ \ /     \ \ \__.|\.  |                
+              // ~   \~~   |_|   ~~~~ /   ~-.\               
+              //      ~-.._      _.-~~                       
+              //        .--~~~~~~--.                         
+              //       |  |______|  |                        
+              //        ~-|______|-~                         
+              //          |      |                           
+              //          |______|                           
+              //          |  |   |                           
+              //          |__|___|                           
+              //          |_|| _||   Amw                     
+              //          `--'`--'    
+
+
+
 
 
