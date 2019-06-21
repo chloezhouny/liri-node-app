@@ -188,12 +188,12 @@ chalk.white(`
 .--_~-.._      __.-~                                      
 \`-._~~~  ~~~~~~  |\\`),
 chalk.yellow(`                                     
-  ~~~~`), chalk.magenta(`|______|`),chalk.yellow(` | |                                      
-    / `), chalk.magenta(`|______|`),chalk.yellow(` |  \\`));
+  ~~~~`), chalk.magenta(`|______|`),chalk.white(` |`), chalk.yellow(`|                                      
+    / `), chalk.magenta(`|______|`),chalk.white(` |`), chalk.yellow(` \\`));
 console.log(
-  chalk.yellow(` \\-~ /`), chalk.magenta(`|      |`), chalk.yellow(` |\\  ~-/`));
+  chalk.yellow(` \\-~ /`), chalk.magenta(`|      |`), chalk.white(` |`), chalk.yellow(`\\  ~-/`));
 console.log(                                  
-  chalk.yellow(`  ~-._`), chalk.magenta(`|______\`\`-`), chalk.yellow(` '_.--~ `)); 
+  chalk.yellow(`  ~-._`), chalk.magenta(`|______`), chalk.white(`\`-`), chalk.yellow(` '_.--~ `)); 
 console.log(                                  
   chalk.white(`       |  |   |`), chalk.yellow(`~~`));
 console.log(                                        
