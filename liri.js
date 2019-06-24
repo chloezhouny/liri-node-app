@@ -3,6 +3,9 @@ var axios = require("axios");
 
 var keys = require("./keys.js");
 
+
+
+
 var Spotify = require('node-spotify-api');
 
 const chalk = require('chalk');
@@ -14,6 +17,7 @@ var spotify = new Spotify(keys.spotify);
 
 var website = process.argv[2];
 var searchName = process.argv.slice(3).join(" ");
+
 
 // Include the axios npm package (Don't forget to run "npm install axios" in this folder first!)
 
@@ -169,6 +173,8 @@ var searchName = process.argv.slice(3).join(" ");
 
 
 
+
+
      console.log("                   ");
 	 console.log("                   ");
 	 console.log("    Hi, I'm Blossom");
@@ -208,25 +214,6 @@ console.log(`            `);
 
 
 
-     console.log("                   ");
-	 console.log("                   ");
-	 console.log(chalk.yellow(`
-                     ..------..                          
-               /~~-.-~__-'\`-__  ~-.  .-~-.`));
-	 console.log(chalk.yellow(`             |   /~~~\\     / ~~---\\|     |`));   
-    console.log(chalk.yellow(`             |  `)+ chalk.white(`||`) + chalk.cyan(`| * |   `)+ chalk.white(`| `)+ chalk.cyan(`| |  * |`)+ chalk.yellow(`|`));               
-              // /_-|\ \ /     \ \ \__.|\.  |                
-              // ~   \~~   |_|   ~~~~ /   ~-.\               
-              //      ~-.._      _.-~~                       
-              //        .--~~~~~~--.                         
-              //       |  |______|  |                        
-              //        ~-|______|-~                         
-              //          |      |                           
-              //          |______|                           
-              //          |  |   |                           
-              //          |__|___|                           
-              //          |_|| _||   Amw                     
-              //          `--'`--'    
 
 
 
