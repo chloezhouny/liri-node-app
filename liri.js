@@ -10,6 +10,15 @@ var Spotify = require('node-spotify-api');
 
 const chalk = require('chalk');
 
+const chalkAnimation = require('chalk-animation');
+var rainbow;
+function createAnimation()
+ {
+    rainbow = 
+    chalkAnimation.rainbow('        Here is what you need');
+}
+
+
 var fs = require("fs");
 
 // to access your keys information
@@ -35,14 +44,16 @@ var searchName = process.argv.slice(3).join(" ");
 
 
 			  	 var showData = [
-			    "Name of the venue: " + response.data[0].venue.name,
-			    "Venue Location: "  + response.data[0].venue.city + " " + response.data[0].venue.region +  " " + response.data[0].venue.country,
-			    "Date of event: " +  response.data[0].datetime
+			    chalk.cyan("         Name of the venue: ") + response.data[0].venue.name,
+			    chalk.cyan("         Venue Location: ")  + response.data[0].venue.city + " " + response.data[0].venue.region +  " " + response.data[0].venue.country,
+			    chalk.cyan("         Date of event: ") +  response.data[0].datetime
                 ].join("\n\n");
 
 	                 fs.appendFile("log.txt", showData + divider, function(err) {
 	        		if (err) throw err;
-	        		 console.log(showData);	       
+	        		 console.log(showData);	
+	        		 console.log(" ");  
+	        		 console.log(" ");        
 	     			 });
 	     			 
 			  })
@@ -81,19 +92,21 @@ var searchName = process.argv.slice(3).join(" ");
 		 	axios.get("http://www.omdbapi.com/?t=" + searchName + "&y=&plot=short&apikey=trilogy").then(
 			  	function(response) {
 			  		 var showData = [
-			    "Title: " + response.data.Title,
-			    "Year: " + response.data.Year,
-			    "imbd Rating: " + response.data.imdbRating,
-			    "Rotten Tomatoes Rating: " + response.data.Ratings[1].Value,
-			    "Country produced: " + response.data.Country,
-			    "Language: " + response.data.Language,
-			    "Plot: " + response.data.Plot,
-			     "Actors: " + response.data.Actors
+			    chalk.magenta("         Title: ") + response.data.Title,
+			    chalk.magenta("         Year: ") + response.data.Year,
+			    chalk.magenta("         imbd Rating: ") + response.data.imdbRating,
+			    chalk.magenta("         Rotten Tomatoes Rating: ") + response.data.Ratings[1].Value,
+			    chalk.magenta("         Country produced: ") + response.data.Country,
+			    chalk.magenta("         Language: ") + response.data.Language,
+			    chalk.magenta("         Plot: ") + response.data.Plot,
+			     chalk.magenta("        Actors: ") + response.data.Actors
 			     ].join("\n\n");
 
 			     fs.appendFile("log.txt", showData + divider, function(err) {
 	        		if (err) throw err;
-	        		 console.log(showData);	       
+	        		 console.log(showData);	
+	        		 console.log(" "); 
+	        		 console.log(" ");           
 	     			 });
 		  })
 		  .catch(function(error) {
@@ -132,13 +145,15 @@ var searchName = process.argv.slice(3).join(" ");
 			    return console.log('Error occurred: ' + err);
 			  }
 			 	 var showData = [
-				"Artist name: " + data.tracks.items[0].artists[0].name,
-				"Song name: " + data.tracks.items[0].name,
-				"Preview link: " + data.tracks.items[0].album.external_urls.spotify,
-				"Album: " + data.tracks.items[0].album.name].join("\n\n");
+				chalk.green(`         Artist name:  `) + data.tracks.items[0].artists[0].name,
+				chalk.green(`         Song name:  `) + data.tracks.items[0].name,
+				chalk.green(`         Preview link: `) + data.tracks.items[0].album.external_urls.spotify,
+				chalk.green(`         Album: `) + data.tracks.items[0].album.name].join("\n\n");
 				 fs.appendFile("log.txt", showData + divider, function(err) {
 	        		if (err) throw err;
-	        		 console.log(showData);	       
+	        		 console.log(showData);	
+	        		 console.log(" ");
+	        		 console.log(" ");        
 	     			 });
 
 			});
@@ -147,7 +162,7 @@ var searchName = process.argv.slice(3).join(" ");
 }
 
 
-
+	setTimeout(() => {
 	 if (website === "do-what-it-says")
 	 {
 	 	 fs.readFile("random.txt", "utf8", function(error, data) {
@@ -158,7 +173,6 @@ var searchName = process.argv.slice(3).join(" ");
 	        }
 	        var dataArr = [];       
 	        dataArr = data.split(",");
-	        console.log(dataArr);
 	        website = dataArr[0];
 	        searchName = dataArr[1];   
 	        check();
@@ -171,47 +185,50 @@ var searchName = process.argv.slice(3).join(" ");
 	 	check();
 	 }
 
-
+	}, 2000);
 
 
 
      console.log("                   ");
 	 console.log("                   ");
-	 console.log("    Hi, I'm Blossom");
+	 createAnimation();
+	   setTimeout(() => {
 	 console.log(chalk.red(`                                                                                                
-      /\\        _/\\                                       
-     |  \\      /   |                                      
-     |   | __ /   |                                       
-     |    |  |   |                                        
-      |..------..|`)
- 
-,chalk.yellow(`
-    .-~ /\\    \\\\ ~-.                                      
-   / ~~~  ~~~~~ ~~~ \\`),
-chalk.white(`
-  |`),chalk.magenta(` *  |    | *  |`),chalk.white(`||                                    
-  |`),chalk.magenta(`--'/      \\ -'.'`),chalk.white(`|`),
-chalk.white(`
-   \\~    |_|   ~~~~~/                                     
-.--_~-.._      __.-~                                      
-\`-._~~~  ~~~~~~  |`)+chalk.yellow(`\\`),
-chalk.white(`                                     
-    ~~~~`)+ chalk.magenta(`|______|`)+chalk.white(` |`), chalk.yellow(`|                                      
-      / `)+ chalk.magenta(`|______|`)+chalk.white(` |`), chalk.yellow(` \\`));
-console.log(
-  chalk.yellow(`   \\-~ /`)+ chalk.magenta(`|      |`), chalk.white(`|`), chalk.yellow(`\\  ~-/`));
-console.log(                                  
-  chalk.yellow(`    ~-._`)+ chalk.magenta(`|______\``)+ chalk.white(`-`)+ chalk.yellow(`'_.--~ `)); 
-console.log(                                  
-  chalk.white(`        |  |   |`)+ chalk.yellow(`~~`));
-console.log(                                        
-  chalk.white(`        |__|___|`));
-console.log(                                          
-  chalk.white(`        |_|| _||   Amw                                    
-        \`--'\`--'`));  
-console.log(`            `); 
-console.log(`            `);            
-
+				      /\\        _/\\                                       
+				     |  \\      /   |                                      
+				     |   | __ /   |                                       
+				     |    |  |   |                                        
+				      |..------..|`)
+				 
+				,chalk.yellow(`
+				    .-~ /\\    \\\\ ~-.                                      
+				   / ~~~  ~~~~~ ~~~ \\`),
+				chalk.white(`
+				  |`),chalk.magenta(` *  |    | *  |`),chalk.white(`||                                    
+				  |`),chalk.magenta(`--'/      \\ -'.'`),chalk.white(`|`),
+				chalk.white(`
+				   \\~    |_|   ~~~~~/                                     
+				.--_~-.._      __.-~                                      
+				\`-._~~~  ~~~~~~  |`)+chalk.yellow(`\\`),
+				chalk.white(`                                     
+				    ~~~~`)+ chalk.magenta(`|______|`)+chalk.white(` |`), chalk.yellow(`|                                      
+				      / `)+ chalk.magenta(`|______|`)+chalk.white(` |`), chalk.yellow(` \\`));
+				console.log("                                "+
+				  chalk.yellow(`   \\-~ /`)+ chalk.magenta(`|      |`), chalk.white(`|`), chalk.yellow(`\\  ~-/`));
+				console.log( "                                "+                                 
+				  chalk.yellow(`    ~-._`)+ chalk.magenta(`|______\``)+ chalk.white(`-`)+ chalk.yellow(`'_.--~ `)); 
+				console.log(  "                                "+                                
+				  chalk.white(`        |  |   |`)+ chalk.yellow(`~~`));
+				console.log(  "                                "+                                      
+				  chalk.white(`        |__|___|`));
+				console.log( "                                "+                                         
+				  chalk.white(`        |_|| _||   Amw                                    
+				        \`--'\`--'`));  
+				console.log(`            `); 
+				console.log(`            `); 
+				console.log(`            `); 
+				console.log(`            `);             
+			}, 1000);	
 
 
 
