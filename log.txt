@@ -367,3 +367,19 @@ nunununununununununununununununununununununununununununununun
 [32m         Album: [39m25
 nunununununununununununununununununununununununununununununun
 
+[32m         Artist name:  [39mAce of Base
+
+[32m         Song name:  [39mThe Sign
+
+[32m         Preview link: [39mhttps://open.spotify.com/album/5UwIyIyFzkM7wKeGtRJPgB
+
+[32m         Album: [39mThe Sign (US Album) [Remastered]
+nunununununununununununununununununununununununununununununun
+
+[36m         Name of the venue: [39mBurg Brattenstein, Burghof
+
+[36m         Venue Location: [39mRottingen  Germany
+
+[36m         Date of event: [39m2019-06-21T20:30:00
+nunununununununununununununununununununununununununununununun
+

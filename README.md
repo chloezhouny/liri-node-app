@@ -5,13 +5,13 @@ LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for mov
 
 <br>
 
-#### Demo 
+## Demo 
 
 ![](demo.gif)
 
 <br>
 
-#### Installation
+## Installation
 ```
 $ npm init -y
 $ npm install axios
@@ -21,8 +21,9 @@ $ npm install chalk-animation
 ```
 
 <br>
+<br>
 
-#### Usage
+## Usage
 liri.js can take in one of the following commands:
 
 
@@ -62,7 +63,7 @@ liri.js can take in one of the following commands:
 
 <br>
 
-#### Technology Used
+## Technology Used
 
 
 * Command Line
@@ -76,5 +77,5 @@ liri.js can take in one of the following commands:
 
 <br>
 
-#### Author
+## Author
 Chloe Zhou
