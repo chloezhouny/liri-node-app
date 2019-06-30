@@ -13,7 +13,6 @@ LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for mov
 
 ## Installation
 ```
-$ npm init -y
 $ npm install axios
 $ npm install node-spotify-api
 $ npm install chalk
